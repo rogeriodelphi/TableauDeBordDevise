@@ -1,7 +1,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.7.5-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-2.2.13-brightgreen.svg)](https://djangoproject.com)
 
-# Tableau de bord
+# Tableau de Bord - Devise
 ```bash
 **Panel pour suivre l'évolution des taux de change**  
 Projet propriétaire développé en _Python_ 3 sur _Windows_, testé sur GNU / _Linux_ et _Windows_.
