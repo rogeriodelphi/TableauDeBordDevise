@@ -5,7 +5,7 @@ from pprint import pprint
 
 def get_rates(currencies, days=30):
     end_date = date.today()
-    start_date= end_date - timedelta(days=days)
+    start_date = end_date - timedelta(days=days)
 
     symbols = ','.join(currencies)
     requete = f"https://api.exchangeratesapi.io/history?start_at={start_date}&end_at={end_date}&symbols={symbols}"
@@ -22,10 +22,10 @@ def get_rates(currencies, days=30):
     for each_day in all_days:
         [all_rates[currency].append(rate) for currency, rate in api_rates[each_day].items()]
 
-
     return all_days, all_rates
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     days, rates = get_rates(currencies=["USD", "CAD", "BRL"])
     pprint(days)
     pprint(rates)
