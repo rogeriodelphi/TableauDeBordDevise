@@ -14,33 +14,29 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             {% for currency, rates in data.items %}
-            <div class="col-md-10 col-lg-6 bg-info">
-                <h1>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto beatae consectetur
-                    consequatur corporis cupiditate eum facere impedit maxime modi mollitia natus obcaecati odit,
-                    pariatur provident quam recusandae similique veniam.
-                </h1>
-<!--                <canvas id="chart"></canvas>-->
+            <div class="col-md-10 col-lg-6">
+                <canvas id="chart-{{ currency }}"></canvas>
             </div>
             {% endfor %}
         </div>
     </div>
 
-    <!--<script>
-        var ctx = document.getElementById("chart");
-        new Chart(ctx, {
-            type: 'line',
-            data: {labels: {{ days_labels|safe }},
-                datasets: [{
-                    label: "USD",
-                    data: {{ data|safe }},
-                    fill: false,
-                    borderColor: 'rgb(255, 128, 128)',
-               }]
-            }
-        });
-
-    </script>-->
+    <script>
+        {% for currency, rates in data.items %}
+            var ctx = document.getElementById("chart-{{ currency }}");
+            new Chart(ctx, {
+                type: 'line',
+                data: {labels: {{ days_labels|safe }},
+                    datasets: [{
+                        label: "{{ currency }}",
+                        data: {{ rates|safe }},
+                        fill: false,
+                        borderColor: 'rgb(255, 128, 128)',
+                   }]
+                }
+            });
+        {% endfor %}
+    </script>
 
 </body>
 </html>
