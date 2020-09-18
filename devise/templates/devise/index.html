@@ -13,13 +13,20 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-6">
-                <canvas id="chart"></canvas>
+            {% for currency, rates in data.items %}
+            <div class="col-md-10 col-lg-6 bg-info">
+                <h1>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto beatae consectetur
+                    consequatur corporis cupiditate eum facere impedit maxime modi mollitia natus obcaecati odit,
+                    pariatur provident quam recusandae similique veniam.
+                </h1>
+<!--                <canvas id="chart"></canvas>-->
             </div>
+            {% endfor %}
         </div>
     </div>
 
-    <script>
+    <!--<script>
         var ctx = document.getElementById("chart");
         new Chart(ctx, {
             type: 'line',
@@ -33,7 +40,7 @@
             }
         });
 
-    </script>
+    </script>-->
 
 </body>
 </html>
